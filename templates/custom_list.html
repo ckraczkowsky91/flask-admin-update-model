@@ -1,0 +1,11 @@
+{% extends 'admin/model/list.html' %}
+
+{% block list_row_actions %}
+    {{ super() }}
+    <form class="icon" method="post" action="{{ url_for('update') }}">
+    <input name="rowid" value="{{ get_pk_value(row) }}" type="hidden">
+    <button title="Approve">
+      <span class="fa fa-ok glyphicon glyphicon-ok"></span>
+    </button>
+  </form>
+{% endblock %}

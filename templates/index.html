@@ -1,8 +1,24 @@
 <!DOCTYPE html>
-<head>
-</head>
-<body>
-  <div>
-    <a href="{{ url_for('admin.index') }}">Go to admin</a>
-  </div>
-</body>
+  <head>
+  </head>
+  <body>
+    <h1>Create a new book:</h1>
+    <form action="{{ url_for('add_new_book') }}" method="POST">
+      <div>
+        <p>Title: </p>
+        <input name='title' placeholder="Harry Potter and the Goblet of Fire" size='50' />
+      </div>
+      <div>
+        <p>Author: </p>
+        <input name='author' placeholder='J.K. Rowling' size='50' />
+      </div>
+      <br>
+      <br>
+      <button type='submit'>Add Book</button>
+    </form>
+    <br>
+    <div>
+      <a href="{{ url_for('admin.index') }}">Go to admin</a>
+    </div>
+  </body>
+</html>
